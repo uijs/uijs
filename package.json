@@ -1,0 +1,28 @@
+{
+  "name": "uijs",
+  "description": "A controvertial canvas based ui system for real mobile apps",
+  "version": "0.0.1",
+  "author": "Elad Ben-Israel <elad.benisrael@gmail.com>",
+  "repository": { "url": "https://github.com/uijs/uijs-core" },
+  "main": "./index",
+  "contributors": [
+    {
+      "name": "Shai Ber",
+      "email": "shaiber01@gmail.com"
+    },
+    {
+      "name": "Ram Greenberg",
+      "email": "ramgreenberg@hotmail.com"
+    }
+  ],
+  "engines": {},
+  "dependencies": {
+    "uijs-core": "0.0.1",
+    "uijs-controls": "0.0.1"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "scripts": {
+    "test": "cd test && ./run.sh"
+  }
+}
