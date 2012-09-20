@@ -168,6 +168,17 @@ For example:
     dist/interaction-sample.uijs.html created
     $ open dist/interaction-sample.uijs.html
 
+# Reference
+
+uijs reference documentation is under the `docs/` directory.
+
+ * [box](https://github.com/uijs/uijs/blob/master/doc/box.md)
+ * [binding](https://github.com/uijs/uijs/blob/master/doc/binding.md)
+ * [events](https://github.com/uijs/uijs/blob/master/doc/events.md)
+ * [positioning](https://github.com/uijs/uijs/blob/master/doc/positioning.md)
+
+Controls still do not have documentation.
+ 
 # Tests
 
 `npm test` will run all tests. These are the regression tests that should be executed before commiting code into the repository.
