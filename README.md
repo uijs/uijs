@@ -14,7 +14,7 @@ At this point (v0.0.1), uijs is not yet usable. We are building it as you read t
 
 uijs's codebase is maintained on [github](https://github.com) (of course) and published via [npm](npmjs.org) as [CommonJS](http://www.commonjs.org) modules. See [Getting Started](#getting-started) for more information on how to install uijs and build uijs apps.
 
-This repository contains only the uijs __core__ module. It consists only of the basic mechanisms that can be used to build uijs modules (UI widgets) and apps. We believe in the ["batteries are not included"](https://github.com/joyent/node/wiki/node-core-vs-userland) philosophy employed in projects like [node.js](http://nodejs.org). For frontend libraries, this is even more critical because one would want to keep the footprint of their app as small as possible, so we didn't want to put too much into the core library.
+We believe in the ["batteries are not included"](https://github.com/joyent/node/wiki/node-core-vs-userland) philosophy employed in projects like [node.js](http://nodejs.org). For frontend libraries, this is even more critical because one would want to keep the footprint of their app as small as possible, so we didn't want to put too much into the core library.
 
 ## Installing uijs-devtools
 
