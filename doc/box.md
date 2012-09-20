@@ -16,14 +16,15 @@ A box is created by calling `box(options)`. The return value is a box. `options`
 
 Example:
 
-    var uijs = require('uijs');
-    
-    var mybox = uijs.box({
-        x: 10,
-        y: 20,
-        alpha: 0.5,
-    });
+```javascript
+var uijs = require('uijs');
 
+var mybox = uijs.box({
+  x: 10,
+  y: 20,
+  alpha: 0.5,
+});
+```
 
 ## Properties
 
@@ -96,19 +97,21 @@ Note that `ondraw` will __not__ be called if:
 
 Example:
 
-    var mybox = box({
-        x: constant(10),
-        y: constant(10),
-        width: constant(30),
-        height: constant(30),
-        rotation: constant(Math.PI),
-    });
+```javascript
+var mybox = box({
+  x: constant(10),
+  y: constant(10),
+  width: constant(30),
+  height: constant(30),
+  rotation: constant(Math.PI),
+});
     
-    mybox.ondraw = function(ctx) {
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(0, 0, this.width(), this.height())
-    };
-    
+mybox.ondraw = function(ctx) {
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(0, 0, this.width(), this.height())
+};
+```    
+
 This will draw a blue rectangle rotated by `PI` radians at `10,10-30x30` (respective to the box's parent coordinates of course).
 
 
@@ -141,17 +144,19 @@ When a box is created, the `children` option may be used to add children. This a
 
 For example:
 
+```javascript
+box({
+  children: [
+    box(),
     box({
       children: [
         box(),
-        box({ 
-          children: [
-            box(),
-            box()
-          ]
-        }),
+        box()
       ]
-    });
+    }),
+  ]
+});
+```
 
 Do not try to modify `box.children` after the box is created. It won't work.
 
@@ -165,7 +170,9 @@ Appends a child to the box. `child` must be another box (`box.isbox(child) === t
 
 Returns the child box, so it will be possible to assign it to a variable. For example:
 
-    var child = mybox.add(box(…));
+```javascript
+var child = mybox.add(box(…));
+```
     
 ### box.remove([ child ]) --> child
 
@@ -217,26 +224,28 @@ Returns a string the represents the tree of boxes. Useful for debugging.
 
 Example:
 
-    var root = box({
-      id: c('#1'),
-      children: [
-        box({ id: c('#1.1') }),
-        box({ id: c('#1.2') }),
-        box({ id: c('#1.3'), children: [
-          box({ id: c('#1.3.1') }),
-          box({ id: c('#1.3.2') }),
-          box({ id: c('#1.3.3') }),
-        ] }),
-        box({ id: c('#1.4'), children: [
-          box({ id: c('#1.4.1') }),
-          box({ id: c('#1.4.2'), children: [
-            box({ id: c('#1.4.2.1') }),
-            box({ id: c('#1.4.2.2') }),
-          ] }),
-          box({ id: c('#1.4.2') }),
-        ] }),
-      ],
-    });
+```javascript
+var root = box({
+  id: c('#1'),
+  children: [
+    box({ id: c('#1.1') }),
+    box({ id: c('#1.2') }),
+    box({ id: c('#1.3'), children: [
+      box({ id: c('#1.3.1') }),
+      box({ id: c('#1.3.2') }),
+      box({ id: c('#1.3.3') }),
+    ] }),
+    box({ id: c('#1.4'), children: [
+      box({ id: c('#1.4.1') }),
+      box({ id: c('#1.4.2'), children: [
+        box({ id: c('#1.4.2.1') }),
+        box({ id: c('#1.4.2.2') }),
+      ] }),
+      box({ id: c('#1.4.2') }),
+    ] }),
+  ],
+});
+```
 
 Output:
 
@@ -331,11 +340,13 @@ It is easy to animate any box property using the `box.animate` function.
 
 For example:
 
-    var mybox = box({ x: 0, y: 0 });
+```javascript
+var mybox = box({ x: 0, y: 0 });
 
-    mybox.on('touchstart', function() {
-      mybox.animate({ x: 100, y: 100 });
-    });
+mybox.on('touchstart', function() {
+  mybox.animate({ x: 100, y: 100 });
+});
+```
 
 This will bind animation functions to the `x` and `y` properties so that they
 will change from their current value (be it `0` on start or any other) to `100`.
@@ -346,46 +357,53 @@ In order to derive from `box`, all you need is to call box and extend the result
 
 For example, say we want to create a box with a background fill.
 
-    var box = require('uijs').box;
+```javascript
+var box = require('uijs').box;
     
-    function rect(options) {
-      var obj = box(options);
-      obj.ondraw = function(ctx) {
-        ctx.fillStyle = 'red';
-        ctx.fillRect(0, 0, this.width(), this.height());
-      };
-      return obj;
-    }
-    
+function rect(options) {
+  var obj = box(options);
+  obj.ondraw = function(ctx) {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, this.width(), this.height());
+  };
+  
+  return obj;
+}
+```
+
 This basically defines a new "type" of box that can be reused:
 
-    var myrect = rect({
-      x: constant(10),
-      y: constant(10),
-      width: constant(100),
-      height: constant(100),
-    });
+```javascript
+var myrect = rect({
+  x: constant(10),
+  y: constant(10),
+  width: constant(100),
+  height: constant(100),
+});
+```
     
 And we got ourselves a `0,0-100x100` red rectangle.
 
 Now say we want to add an attribute `color` that will define the fill style:
 
-    function rect(options) {
-      // make sure we have options
-      options = options || {};
+```javascript
+function rect(options) {
+  // make sure we have options
+  options = options || {};
       
-      // make sure we have `options.color`
-      options.color = 'color' in options ? options.color : constant('red');
+  // make sure we have `options.color`
+  options.color = 'color' in options ? options.color : constant('red');
 
-      var obj = box(options);
+  var obj = box(options);
 
-      obj.ondraw = function(ctx) {
-          ctx.fillStyle = this.color();
-          ctx.fillRect(0, 0, this.width(), this.height());
-      };
+  obj.ondraw = function(ctx) {
+    ctx.fillStyle = this.color();
+    ctx.fillRect(0, 0, this.width(), this.height());
+  };
       
-      return obj;
-    }
+  return obj;
+}
+```
 
 ## Extending
 
