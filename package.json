@@ -22,7 +22,5 @@
   },
   "devDependencies": {},
   "optionalDependencies": {},
-  "scripts": {
-    "test": "cd test && ./run.sh"
-  }
+  "scripts": {}
 }
