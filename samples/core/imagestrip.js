@@ -1,7 +1,7 @@
 // this sample shows a springy image carousel. pretty awesome.
 // source can be found here ./imagestrip
 
-var uijs = require('..');
+var uijs = require('../..');
 var loadimage = uijs.util.loadimage;
 var carousel = require('./imagestrip/carousel');
 var images = require('./imagestrip/data');

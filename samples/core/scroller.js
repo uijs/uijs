@@ -1,7 +1,7 @@
 // this is a sample for the `scroller` control. basically, you just set the
 // `content` attribute with some box and it can scroll with kinetic behavior.
 
-var uijs = require('..');
+var uijs = require('../..');
 var positioning = uijs.positioning;
 var scroller = uijs.scroller;
 var box = uijs.box;

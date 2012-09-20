@@ -3,7 +3,7 @@
 // boxes receive events. the colored box that is 'dragged' with the touchpoint
 // represents the colors of the boxes currently capturing events.
 
-var uijs = require('..');
+var uijs = require('../..');
 var box = uijs.box;
 var defaults = uijs.util.defaults;
 var html = uijs.html;

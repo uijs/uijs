@@ -3,7 +3,7 @@
 // a BIG caveat for html boxes is that the dom element will is overlayed on top of the uijs
 // canvas, which will fuck z-index.
 
-var uijs = require('..');
+var uijs = require('../..');
 var animate = uijs.animation;
 var bind = uijs.bind;
 

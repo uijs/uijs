@@ -1,7 +1,7 @@
 // this sample merely shows a rect 320x480 (iOS 3")
 // it can be used to calibrate web apps/phonegap for the proper resolution and pixel ratio
 
-var uijs = require('..');
+var uijs = require('../..');
 
 var app = uijs.box();
 

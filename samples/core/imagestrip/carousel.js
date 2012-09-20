@@ -1,4 +1,4 @@
-var uijs = require('../..');
+var uijs = require('../../..');
 var defaults = uijs.util.defaults;
 var min = uijs.util.min;
 var max = uijs.util.max;

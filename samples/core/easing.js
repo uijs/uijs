@@ -3,7 +3,7 @@
 // a small red box on screen from 10 to 500 using that easing function for 5s forward 
 // and then 0.5s backwards.
 
-var uijs = require('..');
+var uijs = require('../..');
 
 var app = uijs.box();
 
