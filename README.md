@@ -4,17 +4,19 @@
 
 __uijs__ is (yet another) cross platform mobile UI toolkit for apps.
 
-[Stability](http://nodejs.org/api/documentation.html#documentation_stability_index): 1 - Experimental. __uijs__ is in early stages of development. It is still not mature enough for building actual apps with but we are looking for awesome hackers to join in and solve all those crazy problems.
-
 Our goal is to create a UI software stack for mobile apps that looks and behaves like native mobile UI. Current stacks like [jQuery Mobile](http://jquerymobile.com/), [jQTouch](http://www.jqtouch.com) and [Sencha Touch](http://www.sencha.com/products/touch) are doing an excellent job with HTML5. We thought it would be interesting to try out something a little different and use the HTML5 canvas as our basis for the entire UI system.
 
 Our thesis, which is yet to be proven, is that since we have almost full control on both rendering and behavior we might be able to create a great experience, which mobile users are accustomed to in native apps today.
 
-At this point (v0.0.1), uijs is not yet usable. We are building it as you read this (yes!). If you are interested in contributing or trying it out, you are more then welcome. Ping us at the [uijs google group](mailto:uijs@googlegroups.com).
-
 uijs's codebase is maintained on [github](https://github.com) (of course) and published via [npm](npmjs.org) as [CommonJS](http://www.commonjs.org) modules. See [Getting Started](#getting-started) for more information on how to install uijs and build uijs apps.
 
 We believe in the ["batteries are not included"](https://github.com/joyent/node/wiki/node-core-vs-userland) philosophy employed in projects like [node.js](http://nodejs.org). For frontend libraries, this is even more critical because one would want to keep the footprint of their app as small as possible, so we didn't want to put too much into the core library.
+
+## Stability
+
+[Stability](http://nodejs.org/api/documentation.html#documentation_stability_index) index: 1 - Experimental.
+
+__uijs__ is in early stages of development. It is still not mature enough for building actual apps with but we are looking for awesome hackers to join in and solve all those crazy problems. At this point (v0.0.1), uijs is not yet usable. We are building it as you read this (yes!). If you are interested in contributing or trying it out, you are more then welcome. Ping us at the [uijs google group](mailto:uijs@googlegroups.com).
 
 ## Installing uijs-devtools
 
@@ -24,12 +26,18 @@ To installl the [development tools](https://github.com/uijs/uijs-devtools) globa
 
     $ npm install -g uijs-devtools
 
+Verify that they work:
+
+    $ uijs
+    Development tools for uijs apps and modules (version 0.0.1)
+    ...
+
 Now, create a directory for your app/module and install uijs there:
 
     $ cd hello-uijs
     $ npm install uijs
 
-> __Contributors__: Instead of using `npm install` you can use `npm link` to reference a local copy of a the `uijs` module. Git clone [https://github.com/uijs/uijs](https://github.com/eladb/uijs) into a local directory, run `npm link` within that directory and then you can use `npm link uijs` to install the `uijs` module as a link. You will see that `node_modules/uijs` will be a symlink instead of a real directory. Loving npm!
+> __Contributors__: Instead of using `npm install` you can use `npm link` to reference a local copy of a the `uijs` module. Git clone [https://github.com/uijs/uijs](https://github.com/eladb/uijs) into a local directory, run `npm link` within that directory and then you can use `npm link uijs` to install the `uijs` module as a link. You will see that `node_modules/uijs` will be a symlink instead of a real directory. You might also want to do the same for `uijs-core` and `uijs-controls` within the `uijs` repo. Loving npm!
 
 This will create a `node_modules/uijs` directory with the uijs core module.
 
@@ -85,7 +93,7 @@ The `uijs` program is the entry point for the [devtools](https://github.com/uijs
 
 Open `dist/hello.uijs.html` with a web browser and you should see something like this:
 
-![image](doc/hello1.png)
+![image](https://raw.github.com/uijs/uijs/master/doc/hello1.png)
 
 Yeah!
 
@@ -123,7 +131,7 @@ With this:
 
 Now you should see something like this:
 
-![image](doc/hello2.png)
+![image](https://raw.github.com/uijs/uijs/master/doc/hello2.png)
 
 If you change the browser window dimensions, you should see these values change immediately.
 
