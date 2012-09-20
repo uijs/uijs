@@ -12,11 +12,13 @@ uijs's codebase is maintained on [github](https://github.com) (of course) and pu
 
 We believe in the ["batteries are not included"](https://github.com/joyent/node/wiki/node-core-vs-userland) philosophy employed in projects like [node.js](http://nodejs.org). For frontend libraries, this is even more critical because one would want to keep the footprint of their app as small as possible, so we didn't want to put too much into the core library.
 
-## Stability
+#### Stability
 
 [Stability](http://nodejs.org/api/documentation.html#documentation_stability_index) index: 1 - Experimental.
 
 __uijs__ is in early stages of development. It is still not mature enough for building actual apps with but we are looking for awesome hackers to join in and solve all those crazy problems. At this point (v0.0.1), uijs is not yet usable. We are building it as you read this (yes!). If you are interested in contributing or trying it out, you are more then welcome. Ping us at the [uijs google group](mailto:uijs@googlegroups.com).
+
+# Hello, uijs!
 
 ## Installing uijs-devtools
 
@@ -41,7 +43,7 @@ Now, create a directory for your app/module and install uijs there:
 
 This will create a `node_modules/uijs` directory with the uijs core module.
 
-## Hello, uijs!
+## Create app.js
 
 __uijs__ apps/modules are [CommonJS](commonjs.org) libraries (`require`, `module.exports`) which export a uijs [box](doc/box.md). A box is a visual rectanglurly-bound element that can draw itself and may have child boxes. In uijs everything is a box.
 
@@ -113,7 +115,7 @@ Passing `-w` to `uijs build` will start a file watch on the directory and automa
 
 Pretty useful!
 
-## Binding
+## Binding attributes to functions
 
 One of uijs's freakingly awesome features is it's binding system. You can read more about 
 it [here](doc/binding.md). Simply put, you can `bind` any box property to a function 
@@ -166,7 +168,7 @@ For example:
     dist/interaction-sample.uijs.html created
     $ open dist/interaction-sample.uijs.html
 
-# Running Tests
+# Tests
 
 `npm test` will run all tests. These are the regression tests that should be executed before commiting code into the repository.
 
@@ -191,7 +193,7 @@ Running all tests:
     Running catest tests
     Running functional tests
 
-## Benchmarks
+# Benchmarks
 
 Benchmarks are uijs apps (export a `box`). All benchmarks are under the `benchmarks` directory.
 To run a benchmark, use the uijs devtool `bench` or `prof` commands. By default the benchmark will run for 5 seconds. If `prof` is used, it will show a profiler output.
@@ -211,7 +213,7 @@ Note that since benchmarks are regular uijs apps, they can usually be also opene
     $ uijs debug the-jumping-box.js
     http://localhost:5000
 
-### Results
+#### Results
 
 _All results are from MacBook Air 1.8 GHz i7 4GB_
 
