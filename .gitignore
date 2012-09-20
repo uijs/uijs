@@ -13,3 +13,7 @@ results
 
 node_modules
 npm-debug.log
+
+dist
+.tmp.*
+v8.log
