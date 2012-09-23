@@ -1,12 +1,13 @@
-var uijs = require('../..');
+var uijs = require('uijs');
 var html = uijs.html;
 var box = uijs.box;
 var util = uijs.util;
 var positioning = uijs.positioning;
-var listview = uijs.listview;
-var rect = uijs.rect;
-var label = uijs.label;
-var searchBar = uijs.searchBar;
+var controls = require('..');
+var listview = controls.listview;
+var rect = controls.rect;
+var label = controls.label;
+var searchBar = controls.searchBar;
 var bind = uijs.bind;
 
 var app = box();
@@ -52,11 +53,7 @@ left.on('load',function(){
   document.getElementById('createList').onclick = function(){
     if(app.children.length == 2){
       app.remove(right);
-      //temp until supporting watch on add/remove from children ...
-      if (right.searchBar){
-        var htmlNode = right.searchBar.input.children[1]._div;
-        htmlNode.parentNode.removeChild(htmlNode);  
-      }
+      //if (right.searchBar) right.searchBar.input.children[1].dispose();
     }
     right = listview({
       x: bind(positioning.prev.right()),
