@@ -106,11 +106,11 @@ var right = image({
 });
 
 var base_ondraw = right.ondraw;
-right.ondraw = function(ctx) {
+right.ondraw = function(ctx, scale, oppositeScale) {
   ctx.strokeStyle = 'black';
   ctx.lineWidth = 5;
   ctx.strokeRect(0, 0, this.width, this.height);
-  base_ondraw.call(this, ctx);
+  base_ondraw.call(this, ctx, scale, oppositeScale);
 };
 
 app.add(left);
